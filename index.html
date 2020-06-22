@@ -2,66 +2,189 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Bare - Start Bootstrap Template</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Simple CRM</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.css" />
+    <link rel="stylesheet" href="https://bootswatch.com/3/paper/bootstrap.css">
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Simple CRM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto float-right">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+    <div class="container-fluid" id="clientButton" style="margin-bottom:-1em;">
+        <div class="row">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Add Client
+            </button>
+        </div>
+    </br>
+        <div class="row" id="pipeHeaders">
+            <div class="panel col-sm-2"><h4>Lead In</h4></div>
+            <div class="panel col-sm-2"><h4>Contact Made</h4></div>
+            <div class="panel col-sm-2"><h4>Needs Defined</h4></div>
+            <div class="panel col-sm-2"><h4>Proposal Made</h4></div>
+            <div class="panel col-sm-2"><h4>Contract Started</h4></div>
+            <div class="panel col-sm-2"><h4>Success</h4></div>
+        </div>
     </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-        <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-        <ul class="list-unstyled">
-          <li>Bootstrap 4.5.0</li>
-          <li>jQuery 3.5.1</li>
-        </ul>
-      </div>
+    <!-- Page Content -->
+    <div class="container-fluid">
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Client</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body ">
+                            <div class="md-form mb-5">
+                                <i class="far fa-building prefix grey-text"></i>
+                                <input type="text" id="defaultForm-name" class="form-control validate" placeholder="Company Name">
+                                <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <i class="fas fa-user prefix grey-text"></i>
+                                <input type="text" id="defaultForm-name" class="form-control validate" placeholder="Contact Name" >
+                                <label data-error="wrong" data-success="right" for="orangeForm-name"></label>
+                            </div>
+                            <div class="md-form mb-5">
+                                <i class="fas fa-envelope prefix grey-text"></i>
+                                <input type="email" id="defaultForm-email" class="form-control validate" placeholder="Contact Email">
+                                <label data-error="wrong" data-success="right" for="defaultForm-email">Contact Email</label>
+                            </div>
+                            <div class="md-form ">
+                                <i class="fas fa-phone prefix grey-text"></i>
+                                <input type="phone" id="defaultForm-phone" class="form-control validate" placeholder="Contact Email">
+                                <label data-error="wrong" data-success="right" for="defaultForm-pass">Contact Phone</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center" data-dismiss="modal">
+                            <button class="btn btn-default" id="add-new-widget">Add Client</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 well">
+                <!-- gridstack.js elements go here -->
+                <div class="grid-stack" id="newClient">
+                 <!--   <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+                        <div class="grid-stack-item-content panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Company Name</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Contact Name</p>
+                                <p>Phone</p>
+                                <p>Email</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+                        <div class="grid-stack-item-content panel panel-warning">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Company Name</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Contact Name</p>
+                                <p>Phone</p>
+                                <p>Email</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2">
+                        <div class="grid-stack-item-content panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Company Name</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>Contact Name</p>
+                                <p>Phone</p>
+                                <p>Email</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.0/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.4.0/gridstack.all.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+
+        // add client tile
+        $(function () {
+            var options = {
+    
+            };
+            $('.grid-stack').gridstack(options);
+            new function () {
+                this.items = [
+                    {x: 0, y: 0, width: 2, height: 2}
+                ];
+                this.grid = $('.grid-stack').data('gridstack');
+                this.addNewWidget = function () {
+                    var node = this.items.push();
+                    this.grid.addWidget($('<div class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="2" data-gs-height="2"><div class="grid-stack-item-content panel panel-success"><div class="panel-heading"><h3 class="panel-title">Company Name</h3></div><div class="panel-body"><p>Contact Name</p><p>Phone</p><p>Email</p></div></div></div>'),
+                        node.x, node.y, node.width, node.height).close();
+                    return false;
+                }.bind(this);
+                $('#add-new-widget').click(this.addNewWidget);
+            };
+        });
+
+        
+
+        
+    </script>
+
 
 </body>
 
